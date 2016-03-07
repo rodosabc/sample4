@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content=" ">
+  <meta name="keywords" content=" ">
+  <meta name="robots" content="all">
+  <title>Стихи</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <script>
+    jQuery(document).ready(function($){
+      $('.icon-menu').click(function(event){
+        $('.right_menu').toggleClass('active');
+      });
+    });
+  </script>
+  <div class="header">
+    <div class="wrapper_h">
+      <div class="icon-menu">
+        <span class="divide"></span>
+        <span class="divide"></span>
+        <span class="divide"></span>
+      </div>
+      <div class="logo"><%= link_to image_tag('logo'), root_path%></a></div>
+    </div>
+  </div>
+  <div id="content">
+    <div class="left_menu">
+      <div class="menu">
+        <nav>
+          <ul>
+            <a href="#"><li> Menu-1</li></a>
+            <a href="#"><li>Menu-2</li></a>
+            <a href="#"><li>Menu-3</li></a>
+            <a href="#"><li>Menu-4</li></a>
+            <a href="#"><li>Menu-5</li></a>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="right_menu">
+      <div class="menu">
+        <nav>
+          <ul>
+            <%@holidays.each do |holiday|%>
+                <a href="<%= holiday_poems_path(holiday) %>"><li><%=holiday.text%></li></a>
+            <%end%>
+          </ul>
+        </nav>
+      </div>
+      <div class="menu menu_author">
+        <nav>
+          <ul>
+            <a href="#"><li> Menu-1</li></a>
+            <a href="#"><li>Menu-2</li></a>
+            <a href="#"><li>Menu-3</li></a>
+            <a href="#"><li>Menu-4</li></a>
+            <a href="#"><li>Menu-5</li></a>
+          </ul>
+        </nav>
+      </div>
+    </div>
+<%= yield %>
+  </div>
+    <div class="footer">
+      <div class="footer_c">
+        <p>design by kennystorm 2016</p>
+      </div>
+    </div>
+</body>
+</html>

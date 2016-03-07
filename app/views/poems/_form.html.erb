@@ -1,0 +1,9 @@
+<%= form_for([@holiday, @holiday.poems.build]) do |f| %>
+    <p>
+      <%= f.label :text %><br>
+      <%=  f.text_field :text,  %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

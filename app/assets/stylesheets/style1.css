@@ -1,0 +1,246 @@
+@font-face {
+    font-family: SunFran; /* имя шрифта для CSS правил */
+    src: local("SunFran"), /* проверяем наличие шрифта в ОС пользователя */
+    url(SF-UI-Text-Light.otf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo img{
+    max-width:100%;
+}
+
+* {
+    box-sizing: padding-box;
+    font-family: SunFran;
+}
+
+.header {
+    width: 100%;
+    height: 150px;
+    background-color: #3399ff;
+    margin-top: 15px;
+    padding-left: 5px;
+}
+
+.wrapper_h {
+    max-width: 960px;
+    max-height: 150px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 150px;
+    width: 250px;
+    float: left;
+}
+
+.menu {
+    margin: 0px auto;
+    border: 2px solid #3399ff;
+    border-radius: 10px;
+}
+.menu nav ul{
+    margin: 5px auto;
+    text-align: center;
+    padding-left: 0px;
+}
+.menu nav ul li{
+    color: #3399ff;
+    display: block;
+    margin: 5px;
+    padding: 5px;
+}
+
+.menu nav ul li:hover{
+    display: block;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    color: #fff;
+    background-color:  #3399ff;
+}
+#content {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.element {
+    min-width: 230px;
+    width: 80%;
+    border: 2px solid #3399ff;
+    border-top: 10px solid #3399ff;
+    border-bottom: 10px solid #3399ff;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding-top:40px;
+    padding-bottom: 40px;
+}
+
+.element p{
+    font-size: 1.1em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer {
+    width: 100%;
+    height: 30px;
+    background-color: #3399ff;
+    margin-bottom: 30px;
+}
+
+.footer_c {
+    max-width: 960px;
+    margin: 0px auto 0px auto;
+    font-size: 0.7em;
+    color: #fff;
+}
+
+.footer_c p{
+    padding-top:7px;
+    padding-left: 5px;
+}
+
+.poem_view {
+    width: 55%;
+    margin-left: 22.80%;
+    margin-right: 22.80%;
+    padding-top: 10px;
+}
+.right_menu {
+    width: 22.80%;
+    float: left;
+    padding: 10px;
+    transition: left 1s ease-out 0.5s;
+}
+.left_menu {
+    width: 22.80%;
+    float: right;
+    padding: 10px;
+
+}
+
+.menu.menu_author{
+    display: none;
+}
+
+.icon-menu {
+    display: none;
+    height: 30px;
+    width:30px;
+    float: left;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 27px;
+    margin-left: 10px;
+}
+
+.divide {
+    border-radius: 5px;
+    display:block;
+    height: 5px;
+    margin: 5px 0;
+    background-color: #ffffff;
+}
+
+@media (max-width: 769px) {
+    .header {
+        height: 120px;
+    }
+    .logo{
+        height: 90px;
+    }
+
+    .logo img{
+        height: 120px;
+        float: left;
+    }
+    .left_menu {
+        display: none;
+    }
+    .poem_view {
+        width: 70%;
+        margin-right: 1%;
+        margin-left: 27%;
+    }
+    .menu.menu_author{
+        margin-top: 15px;
+        display: block;
+    }
+    .right_menu {
+        margin-top: 5px;
+        width: 27%;
+        float: left;
+        padding: 10px;
+    }
+
+}
+
+@media (max-width: 641px), (orientation:  portrait) {
+    .header {
+        height: 90px;
+        margin-top: 0;
+        position: fixed;
+    }
+
+    .logo img{
+        height: 90px;
+        float: left;
+    }
+    .left_menu {
+        display: none;
+    }
+    .poem_view {
+        width: 95%;
+        margin-left: 1%;
+    }
+    .menu.menu_author{
+        margin-top: 15px;
+        display: block;
+    }
+    .right_menu {
+        position:fixed;
+        left: -280px;
+        width: 250px;
+        height: 100%;
+        margin-top:0;
+        background-color: white;
+        border-right: 2px solid #3399ff;
+        overflow: auto;
+    }
+
+    #content{
+        padding-top:90px;
+    }
+
+    .icon-menu {
+        display: block;
+    }
+
+    .right_menu.active{
+        left: 0;
+    }
+
+    .menu {
+        font-size: 1.2em;
+        margin: 0px auto;
+        border: 0px;
+    }
+
+    .menu nav ul li{
+        padding: 10px 0px;
+    }
+    .menu nav ul li:hover{
+        padding: 10px 0px;
+    }
+
+
+}
